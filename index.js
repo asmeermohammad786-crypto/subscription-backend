@@ -21,13 +21,15 @@ const PLAN_TOTAL_COUNTS = {
   "plan_SrSddVrdCygFY9": 240,  // Monthly   -> 20 years
   "plan_TanS4m0D2qSrG1": 80,   // 3 Months  -> 20 years
   "plan_TanTRDITY0FhiH": 20,   // Yearly    -> 20 years
-  "plan_Tc0uU5fR5yUBcc": 1     // One-Time  -> charges only once, then stops
+  "plan_Tc0uU5fR5yUBcc": 1,    // One-Time  -> charges only once, then stops
+  "plan_Tt9x60DcA9fUZ8": 240   // Test Rs199 Monthly -> 20 years
 };
 
 // How many days after signup the subscription's first recurring charge
 // should start. Anything not listed here uses DEFAULT_START_DELAY_DAYS.
 const DEFAULT_START_DELAY_DAYS = 3;
 const PLAN_START_DELAY_DAYS = {
+  "plan_Tt9x60DcA9fUZ8": 1,  // Test Rs199 -> first debit due after 1 day
   "plan_Tc0uU5fR5yUBcc": 15  // One-Time (₹40,000) -> starts 15 days later
 };
 
