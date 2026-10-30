@@ -22,7 +22,8 @@ const PLAN_TOTAL_COUNTS = {
   "plan_TanS4m0D2qSrG1": 80,   // 3 Months  -> 20 years
   "plan_TanTRDITY0FhiH": 20,   // Yearly    -> 20 years
   "plan_Tc0uU5fR5yUBcc": 1,    // One-Time  -> charges only once, then stops
-  "plan_Tt9x60DcA9fUZ8": 240   // Test Rs199 Monthly -> 20 years
+  "plan_Tt9x60DcA9fUZ8": 240,  // Test Rs199 Monthly -> 20 years
+  "plan_Tu8oaBwvbXwrAo": 240   // Account Services Rs299 Monthly -> 20 years
 };
 
 // How many days after signup the subscription's first recurring charge
@@ -183,7 +184,7 @@ app.post("/create-mandate", async (req, res) => {
 
     const years = payMethod === "upi" ? 20 : 10;
     const order = await razorpay.orders.create({
-      amount: 100, // ₹1 authorisation payment
+      amount: 1000, // ₹10 authorisation payment
       currency: "INR",
       payment_capture: true,
       method: payMethod,
@@ -224,7 +225,7 @@ app.post("/create-mandate", async (req, res) => {
       order_id: order.id,
       customer_id: customer.id,
       key_id: "rzp_live_SkJZAnmCm3jnMA",
-      amount: 100
+      amount: 1000
     });
   } catch (err) {
     console.error("Mandate Error:", err);
